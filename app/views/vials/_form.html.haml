@@ -1,0 +1,10 @@
+= form_for @vial do |f|
+  - if @vial.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vial.errors.count, "error")} prohibited this vial from being saved:"
+      %ul
+        - @vial.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

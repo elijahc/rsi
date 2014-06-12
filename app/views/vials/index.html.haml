@@ -1,0 +1,17 @@
+%h1 Listing vials
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @vials.each do |vial|
+    %tr
+      %td= link_to 'Show', vial
+      %td= link_to 'Edit', edit_vial_path(vial)
+      %td= link_to 'Destroy', vial, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Vial', new_vial_path
